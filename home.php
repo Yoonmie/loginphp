@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php
 session_start();
 if($_SESSION['login']==null)
@@ -11,6 +10,7 @@ else {
   }
 }
 ?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
