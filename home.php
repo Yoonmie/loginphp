@@ -7,7 +7,6 @@ if($_SESSION['login']==null)
 }
 else {
   if(isset($_POST['btn-logout'])) {
-    session_destroy();
     header("Location: logout.php");
   }
 }

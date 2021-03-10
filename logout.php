@@ -1,15 +1,11 @@
-<!DOCTYPE html>
 <?php
-echo "<script type='text/javascript'>alert('Log Out Successfully!')</script>";
+session_start();
+$errorMessage="";
+if($_SESSION['login']==null) {
+  header("Location:login.php");
+}
+else {
+  unset($_SESSION['login']);
+  header("Location:login.php");
+}
 ?>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-
-</body>
-</html>
