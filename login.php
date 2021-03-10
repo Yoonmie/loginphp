@@ -6,7 +6,7 @@ if(isset($_POST['btnlogin'])) {
   $password =$_POST['pw'];
   if($email!=null && $password!=null)
   {
-    if($email=="admin@gmail.com" && $password=="secret")
+    if($email=="admin@admin.com" && $password=="secret")
     {
       $_SESSION['login']="login";
       header("Location: home.php");
