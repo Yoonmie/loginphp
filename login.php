@@ -1,19 +1,24 @@
 <?php
+require('connect.php');
 session_start();
 $errorMessage="";
+$select=mysqli_query($db,"SELECT email,password FROM customer");
+
 if(isset($_POST['btnlogin'])) {
   $email=$_POST['email'];
   $password =$_POST['pw'];
-  
+
   if($email!=null && $password!=null)
   {
-    if($email=="admin@admin.com" && $password=="secret")
-    {
-      $_SESSION['login']="login";
-      header("Location: home.php");
-    } 
-    else{
-      $errorMessage='LogIn Failed';
+    while($row=mysqli_fetch_assoc($select)){
+      if($email==$row['email'] && $password==$row['password'])
+      {
+        $_SESSION['login']=true;
+        header("Location: home.php");
+      } 
+      else{
+        $errorMessage='LogIn Failed';
+      }
     }
   }
   else{

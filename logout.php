@@ -1,7 +1,7 @@
 <?php
 session_start();
 $errorMessage="";
-if($_SESSION['login']==null) {
+if($_SESSION['login']==false) {
   header("Location:login.php");
 }
 else {
